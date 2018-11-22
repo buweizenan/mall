@@ -10,34 +10,22 @@ http://creativecommons.org/licenses/by/3.0/
 ------------------------------------------------*/
 body {
 	font-family: 'Open Sans', sans-serif;
+	background: #f3f3f3;
 }
 
 #wrapper {
 	width: 100%;
-	background: #2b2e33;
 }
 
 #page-wrapper {
-	padding: 15px 15px;
-	min-height: 600px;
-	background: #f3f3f3;
-}
-
-#page-inner {
-	width: 100%;
-	margin: 10px 20px 10px 0px;
-	background-color: transparent;
-	padding: 10px;
-	min-height: 1200px;
+	margin: 0 0 0 260px;
+	padding: 15px 30px;
 }
 
 .text-center {
 	text-align: center;
 }
 
-.no-boder {
-	border: 1px solid #f3f3f3;
-}
 
 h1, .h1, h2, .h2, h3, .h3 {
 	margin-top: 7px;
@@ -62,7 +50,6 @@ h4 {
 p {
 	font-size: 16px;
 	line-height: 25px;
-	padding-top: 20px;
 }
 
 .panel {
@@ -89,7 +76,10 @@ p {
 	z-index: 1;
 	position: fixed;
 	width: 260px;
-	top: 80px;
+	top: 60px; 
+	bottom: 0;
+	overflow-y : auto;
+	background: #2b2e33;
 }
 
 #page-wrapper {
@@ -116,7 +106,7 @@ p {
 	border-radius: 0;
 }
 /*----------------------------------------------
-   DASHBOARD STYLES    
+ DASHBOARD STYLES    
 ------------------------------------------------*/
 .page-header {
 	padding-bottom: 9px;
@@ -249,7 +239,7 @@ p {
 	width: 70px;
 	height: 70px;
 	line-height: 75px;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 	text-align: center;
 	font-size: 40px;
 }
@@ -290,7 +280,7 @@ p {
 	font-size: 16px;
 	line-height: 30px;
 }
-     /*CHAT PANEL*/
+	 /*CHAT PANEL*/
 /*Charts*/
 
 .main-chart {
@@ -377,7 +367,7 @@ footer p {
 	font-size: 14px;
 }
 /*----------------------------------------------
-    MENU STYLES    
+	MENU STYLES    
 ------------------------------------------------*/
 
 
@@ -407,6 +397,7 @@ footer p {
 }
 
 .navbar-brand b {
+	margin-right:5px;
 	color: #2DAFCB;
 }
 
@@ -414,7 +405,7 @@ footer p {
 	position: relative;
 	display: inline-block;
 	margin: 0px;
-	padding: 0px;
+	padding: 0px 10px;
 }
 
 .top-navbar .nav > li > a {
@@ -431,11 +422,17 @@ footer p {
 	background: transparent;
 }
 
+.top-navbar .nav > li:hover .dropdown-menu{
+	display: block;
+}
 .top-navbar .dropdown-menu {
 	min-width: 230px;
+	top: 98%;
 	border-radius: 0 0 4px 4px;
 }
-
+.dropdown-menu > li > a{
+	cursor: pointer;
+}
 .top-navbar .dropdown-menu > li > a:hover, .top-navbar .dropdown-menu > li > a:focus {
 	color: #225081;
 	background: none;
@@ -531,7 +528,6 @@ ul.nav.nav-second-level.collapse.in {
 
 .navbar-side {
 	border: none;
-	background-color: transparent;
 }
 
 .top-navbar {
@@ -542,7 +538,10 @@ ul.nav.nav-second-level.collapse.in {
 .top-navbar .nav > li > a > i {
 	margin-right: 2px;
 }
-
+.top-navbar .nav > li > a > span {
+	color: #666;
+	margin-right: 5px;
+}
 .top-navbar .navbar-brand:hover {
 	color: #2DAFCB;
 	background-color: rgb(43, 46, 51);
@@ -577,11 +576,11 @@ ul.nav.nav-second-level.collapse.in {
 	color: #666;
 }
 /*----------------------------------------------
-    UI ELEMENTS STYLES     
+	UI ELEMENTS STYLES     
 ------------------------------------------------*/
 .btn-circle {
 	width: 50px;
-	height: 50px;
+	height: 50px; 
 	padding: 6px 0;
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
@@ -592,30 +591,28 @@ ul.nav.nav-second-level.collapse.in {
 }
 
 /*----------------------------------------------
-    MEDIA QUERIES     
+	MEDIA QUERIES     
 ------------------------------------------------*/
- 
-@media(min-width:768px) {
-	#page-wrapper {
-		margin: 0 0 0 260px;
-		padding: 15px 30px;
-		min-height: 1200px;
+
+@media(max-width:768px) {
+
+	.top-navbar{
+			position: relative;
 	}
+	.top-navbar .navbar-brand{
+			width: 100%;
+	}
+	
 
 	.navbar-side {
-		z-index: 1;
-		width: 260px;
+			z-index: 1;
+			width: 100%;
+			position: relative;
+			top: 0;
 	}
-
-	.navbar {
-		border-radius: 0px;
-	}
-}
-
-@media(max-width:480px) {
-	.page-header small {
-		display: block;
-		padding-top: 14px;
-		font-size: 19px;
+	#page-wrapper {
+			margin: 0;
+			padding: 15px 30px;
+			top: 0;
 	}
 }

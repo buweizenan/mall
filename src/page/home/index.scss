@@ -1,0 +1,29 @@
+.color-box {
+  display: block;
+  height: 160px;
+  text-align: center;
+  padding: 20px 0;
+  opacity: 0.8;
+  transition: all 0.3s; // 过渡效果
+  &:hover { // &代表选择器本身也就是color-box，如果它上面有hover
+    text-decoration: none;
+    color: #555;
+    opacity: 1;
+    transform: scale(1.08) // 放大属性
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  .count{
+    font-size:  50px;
+    height: 80px;
+    line-height: 80px;
+  }
+  .desc {
+    font-size: 18px;
+    .fa {
+      font-size: 16px;
+      margin-right: 4px;
+    }
+  }
+}
